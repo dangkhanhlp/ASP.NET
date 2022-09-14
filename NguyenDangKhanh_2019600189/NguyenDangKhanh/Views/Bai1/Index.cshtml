@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = null;
+}
+@{
+    var kq = 0;
+    var num1 = "";
+    var num2 = "";
+    var phep = "";
+    if (IsPost)
+    {
+        num1 = Request["text1"];
+        num2 = Request["text2"];
+        phep = Request["phep"];
+        if (phep.Equals("Cộng"))
+        {
+            kq = num1.AsInt() + num2.AsInt();
+        }
+         else if (phep.Equals("Trừ"))
+        {
+            kq = num1.AsInt() - num2.AsInt();
+        }
+        else if (phep.Equals("Nhân"))
+        {
+            kq = num1.AsInt() * num2.AsInt();
+        }
+        else if (phep.Equals("Chia"))
+        {
+            kq = num1.AsInt() / num2.AsInt();
+        }
+    }
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bài tập 1</title>
+    <style type="text/css">
+        form {
+            padding: 10px;
+            border-style: solid;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <p>
+            <label for="text1">Nhập số thứ 1 </label>
+            <input type="text" name="text1" value="@num1" />
+        </p>
+        <p>
+            <label for="text2">Nhập số thứ 2 </label>
+            <input type="text" name="text2" value="@num2" />
+        </p>
+        <p>
+            <label for="text3">Kết quả </label>
+            <input value="@kq" />
+        </p>
+        <input type="submit" value="Cộng" name="phep" />
+        <input type="submit" value="Trừ" name="phep" />
+        <input type="submit" value="Nhân" name="phep" />
+        <input type="submit" value="Chia" name="phep" />
+    </form>
+</body>
+</html>

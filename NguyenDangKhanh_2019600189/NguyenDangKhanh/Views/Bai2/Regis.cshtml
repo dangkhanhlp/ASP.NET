@@ -1,0 +1,38 @@
+﻿@model NguyenDangKhanh.Models.Person
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Regis</title>
+</head>
+<body>
+    <table border="1" style="border-collapse:collapse" cellpadding="1">
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Password</td>
+            <td>City</td>
+            <td>Gender</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.firstname)</td>
+            <td>@Html.DisplayFor(model => model.lastname)</td>
+            <td>@Html.DisplayFor(model => model.email)</td>
+            <td>@Html.DisplayFor(model => model.password)</td>
+            <td>@Html.DisplayFor(model => model.city)</td>
+            <td>@Html.DisplayFor(model => model.gender)</td>
+        </tr>
+    </table>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

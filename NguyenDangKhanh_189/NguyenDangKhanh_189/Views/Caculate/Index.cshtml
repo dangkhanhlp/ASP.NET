@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tính</h2>
+<form action="/Caculate/TinhToan" method="post">
+    <div>Nhập a:</div><input name="a" />
+    <div>Nhập b:</div><input name="b" /> <br />
+    <input type="radio" name="pheptinh" value="+"/> Cộng
+    <input type="radio" name="pheptinh" value="-"/> Trừ
+    <input type="radio" name="pheptinh" value="*"/> Nhân
+    <input type="radio" name="pheptinh" value="/"/> Chia
+    <br/>
+    <input type="submit" value="Caculate"/>
+</form>
+<br />

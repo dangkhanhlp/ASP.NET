@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @using(Html.BeginForm("Regis","Regis"))
+            {
+                <table border="1">
+                    <tr>
+                        <td colspan="2">Registration form</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("First name")</td>
+                        <td>@Html.TextBox("firstname")</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("Last name")</td>
+                        <td>@Html.TextBox("lastname")</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("Password")</td>
+                        <td>@Html.TextBox("password")</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("City")</td>
+                        <td>
+                            @{ 
+                                IEnumerable<string> li = new List<string>
+                                {
+                                    "ha noi","Thai nguyen"
+                                };
+                            }
+                            @Html.DropDownList("city",new SelectList(li, li.FirstOrDefault()),"---select----")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("Gender")</td>
+                        <td>@Html.RadioButton("gender", "Male") Male
+                        @Html.RadioButton("gender", "Female") Female</td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="save" /></td>
+                        <td><input type="reset" value="Cancel" /></td>
+                    </tr>
+                </table>
+            }
+    </div>
+</body>
+</html>

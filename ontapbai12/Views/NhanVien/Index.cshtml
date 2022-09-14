@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    th {
+        padding: 5px;
+        text-align:center;
+    }
+    td {
+        padding: 5px;
+        text-align: center;
+    }
+</style>
+<h2>Quan li nhan vien</h2>
+<table border="1" style="font-size: 14px">
+    <tr>
+        <th>Mã NV</th>
+        <th>Họ tên</th>
+        <th>Tên phòng</th>
+        <th>Lương</th>
+        <th></th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.MaNV</td>
+                    <td>@item.HoTen</td>
+                    <td>@item.Phong</td>
+                    <td>@item.Luong</td>
+                    <td>
+                        @Html.ActionLink("Sửa","Sua", new {id = item.MaNV.Trim()})|
+                        @Html.ActionLink("Chi tiết","ChiTiet", new {id = item.MaNV.Trim()})|
+                        @Html.ActionLink("Xóa","Xoa", new {id = item.MaNV.Trim()})
+                    </td>
+                </tr>
+            }
+</table>
+@Html.ActionLink("Thêm mới", "Them", "NhanVien");
+

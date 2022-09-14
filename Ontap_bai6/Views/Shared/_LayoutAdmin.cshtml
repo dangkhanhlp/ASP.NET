@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/wwwroot/CSS/StyleSheet1.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="page">
+    <div id="header">
+        <div id="logo">
+            <a><img src="~/wwwroot/images/logo1.jpg" /></a>\
+            <div><p>TRANG QUAN TRI</p></div>
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href=""><span>Trang chủ</span></a></li>
+            <li><a href=""><span>Giới thiệu</span></a></li>
+            <li><a href="><span>Liên hệ</span></a></li>
+            <li><a href="><span>Sản phẩm</span></a></li>
+            <li><a href=""><span>Trang chủ</span></a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <div id="menu2">
+            <ul>
+                <li><a href="/Admin/Index"><span>Trang chủ</span></a></li>
+                <li><a href="/Admin/About"><span>Giới thiệu</span></a></li>
+                <li><a href="><span>Liên hệ</span></a></li>
+                <li><a href="><span>Sản phẩm</span></a></li>
+                <li><a href=""><span>Trang chủ</span></a></li>
+            </ul>
+        </div>
+        <div id="content">
+            @RenderBody()
+        </div>  
+    </div>
+
+</div>
+ 
+</body>
+</html>

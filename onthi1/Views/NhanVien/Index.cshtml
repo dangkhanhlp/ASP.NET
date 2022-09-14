@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Quản lí nhân viên</h2>
+@using(Html.BeginForm())
+            {
+                <p>
+                    Tìm nhân viên: @Html.TextBox("search");
+                    <input type="submit" value="Tìm" />
+                </p>
+            }
+<table border="1" style="font-size: 15px">
+    <tr>
+        <th>Mã NV</th>
+        <th>Họ tên</th>
+        <th> @Html.ActionLink("Phòng", "Index", new { sortOrder = ViewBag.Phong })</th>
+        <th> @Html.ActionLink("Lương", "Index", new { sortOrder = ViewBag.SapTheoLuong }) </th>
+        <th></th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.MaNV</td>
+                    <td>@item.HoTen</td>
+                    <td>@item.Phong</td>
+                    <td>@item.Luong</td>
+                    <td>
+                        @Html.ActionLink("Sửa", "Sua", new { id = item.MaNV.Trim() })|
+                        @Html.ActionLink("Chi tiết", "ChiTiet", new { id = item.MaNV.Trim() })|
+                        @Html.ActionLink("Xóa", "Xoa", new { id = item.MaNV.Trim() })
+                    </td>
+                </tr>
+            }
+</table>
+@Html.ActionLink("Thêm mới", "Them", "NhanVien");
+

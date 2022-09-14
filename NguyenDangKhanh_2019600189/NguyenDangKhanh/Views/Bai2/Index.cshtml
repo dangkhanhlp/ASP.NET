@@ -1,0 +1,72 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bài tập 2</title>
+    <style type="text/css">
+        body {
+            background-color: beige;
+            font-family: Verdana, Arial;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+        @using (Html.BeginForm("Regis", "Bai2"))
+        {
+    <table border="1" style="border-collapse:collapse" cellpadding="5">
+        <tr>
+            <td colspan="2"><h2>Registration Form</h2></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("First Name")</td>
+            <td>@Html.TextBox("firstname")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Last Name")</td>
+            <td>@Html.TextBox("lastname")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Email")</td>
+            <td>@Html.TextBox("email")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Password")</td>
+            <td>@Html.Password("password")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("City")</td>
+            <td>
+                @{
+                    IEnumerable<string> strList = new List<string>
+                                                                    {
+                                    "Hà Nội", "Thái Nguyên","Bắc Giang"
+                                };
+                }
+                @Html.DropDownList("city", new SelectList(strList, strList.FirstOrDefault()), "--Select--")
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Gender")</td>
+            <td>
+                @Html.RadioButton("gender", "Male") Male
+                @Html.RadioButton("gender", "Female") Female
+            </td>
+        </tr>
+        <tr >
+            <td colspan="2"><input type="submit" value="Save" />
+            <input type="reset" value="Cancel" /></td>
+        </tr>
+    </table>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<onthi1.Models.NhanVien>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+            {
+                <p>
+                    Tìm nhân viên: @Html.TextBox("search")
+                    <input type="submit" value="Tìm" />
+                </p>
+            }
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </th>
+        <th>
+            @Html.ActionLink("Phòng", "Index", new { sortOrder = ViewBag.Phong })
+        </th>
+        <th>
+            @Html.ActionLink("Lương", "Index", new {sortOrder = ViewBag.SapTheoLuong})
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Luong)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaNV.Trim() }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaNV.Trim() }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaNV.Trim() })
+        </td>
+    </tr>
+}
+
+</table>

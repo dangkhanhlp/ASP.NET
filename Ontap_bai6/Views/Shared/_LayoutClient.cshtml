@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/wwwroot/CSS/Style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div id="logo">
+                <img src="~/wwwroot/images/big_img.jpg" alt="" border="0" />
+                <a href=""><img src="~/wwwroot/images/logo.jpg" alt="Nhà sách Minh Sơn" border ="0" /></a>
+            </div>
+        </div>
+        <div id="menung">
+            <ul>
+                <li><a href="/Home/Index"><span>Trang chủ</span></a></li>
+                <li><a href="/Home/About"><span>Giới thiệu</span></a></li>
+                <li><a href="/Home/Contact"><span>Liên hệ</span></a></li>
+                <li><a href="/Home/Product"><span>Sản phẩm</span></a></li>
+            </ul>
+        </div>
+        <div id="main">
+            <div id="left">
+                <div id="menud">
+                    <p>Danh mục sách</p>
+                    <ul>
+                        <li><a href=""><span>Sản phẩm</span></a></li>
+                        <li><a href=""><span>Sản phẩm</span></a></li>
+                        <li><a href=""><span>Sản phẩm</span></a></li>
+                        <li><a href=""><span>Sản phẩm</span></a></li>
+                        <li><a href=""><span>Sản phẩm</span></a></li>
+                        <li><a href=""><span>Sản phẩm</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="footer">
+            <p>&copy; Copyright: 2021</p>
+            <p>Học lập trình</p>
+        </div>
+    </div>
+</body>
+</html>
